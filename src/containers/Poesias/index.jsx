@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ContainerMain, ContainerPoemas } from "./styles";
 import ReactPaginate from "react-paginate";
 
-const items = [
+const items = [ 
   {
     titulo: "Vô",
     autor: "Felipe Rosa",
@@ -323,19 +323,6 @@ const items = [
       "Relembrando toda a dor",
       "Sempre mostrando o meu pior",
       "Falando que nunca vou ser melhor",
-    ],
-  },
-   {
-    titulo: "Teste",
-    autor: "Daniel Guimaraes",
-    poema: [
-      "Noites em terror",
-      "Relembrando toda a dor",
-      "Sempre mostrando o meu pior",
-      "Falando que nunca vou ser melhor",
-      "asdasd",
-      "teasdast",
-      "asdasda",
     ],
   },
 ];
