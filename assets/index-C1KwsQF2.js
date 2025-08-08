@@ -125,7 +125,7 @@ See https://reactjs.org/docs/forms.html#controlled-components`),C=j.initialPage?
   justify-content: space-between;
   align-items: center;
   padding: 0 100px;
-`;function R1(){return $.jsx($.Fragment,{children:$.jsx(x1,{children:"Livros"})})}const A1=Kt.div`
+`;function R1(){return $.jsx($.Fragment,{children:$.jsx(x1,{children:"Livros teste Daniel"})})}const A1=Kt.div`
   display: flex;
   height: 100vh;
   width: 100vw;
