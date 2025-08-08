@@ -24,7 +24,7 @@ function Livros() {
               <CardLivros img={capa4} title="Diario" autor="Felipe Rosa"  />
               <CardLivros img={capa5} title="Diario" autor="Felipe Rosa"  />
               <CardLivros img={capa6} title="Diario" autor="Felipe Rosa"  />
-              <CardLivros img={capa7} title="Diario" autor="Felipe Rosa"  />
+              <CardLivros img={capa7} title="Diario" autor="Daniel"  />
             
         </ContainerLivros>
        </ContainerMain>
