@@ -1,0 +1,44 @@
+.book-container {
+  perspective: 1100px;
+}
+
+.book {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+/* Cada "página" é só um wrapper para a animação */
+.page {
+  transform-origin: left center;
+  transition: transform 0.6s ease;
+  backface-visibility: hidden;
+}
+
+.page.right {
+  transform-origin: left center;
+}
+
+.page.left {
+  transform-origin: right center;
+}
+
+/* Animação folhear para frente */
+.flip-right {
+  transform: rotateY(-180deg);
+}
+
+/* Animação folhear para trás */
+.flip-left {
+  transform: rotateY(180deg);
+}
+
+/* O conteúdo do PDF ocupa toda a largura disponível */
+.page .react-pdf__Page {
+  display: block;
+}
+
+.page .react-pdf__Page canvas {
+  max-width: 100%;
+  height: auto;
+}

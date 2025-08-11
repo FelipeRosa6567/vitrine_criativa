@@ -8,6 +8,7 @@ import Livros from '../containers/Livros'
 import Desenhos from '../containers/Desenhos'
 import Games from '../containers/Games'
 import Creditos from '../containers/Creditos'
+import View from '../containers/View'
 
 import DefaultLayout from '../layout/DefaultLayout'
 
@@ -23,6 +24,7 @@ function Router() {
         <Route path="/desenhos" element={<Desenhos />} />
         <Route path="/games" element={<Games />} />
         <Route path="/creditos" element={<Creditos />} />
+        <Route path="/view/:id" element={<View />} />
       </Route>
     </Routes>
     </>

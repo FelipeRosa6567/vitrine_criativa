@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ContainerMain, ContainerPoemas } from "./styles";
 import ReactPaginate from "react-paginate";
 
-const items = [ 
+const items = [
   {
     titulo: "Vô",
     autor: "Felipe Rosa",
@@ -16,11 +16,7 @@ const items = [
   {
     titulo: "A.R.T.",
     autor: "Mukowski",
-    poema: [
-      "O meu sofrimento",
-      "é a poesia que os",
-      "encanta",
-    ],
+    poema: ["O meu sofrimento", "é a poesia que os", "encanta"],
   },
   {
     titulo: "171",
@@ -248,11 +244,7 @@ const items = [
   {
     titulo: "Sem título",
     autor: "Mukowski",
-    poema: [
-      "O amor é apenas uma",
-      "forma elegante de se",
-      "altodestruir",
-    ],
+    poema: ["O amor é apenas uma", "forma elegante de se", "altodestruir"],
   },
   {
     titulo: "Sem título",
@@ -333,7 +325,6 @@ function Poesias() {
 
   const handlePageClick = (event) => {
     setCurrentPage(event.selected);
-    
   };
 
   const offset = currentPage * itemsPerPage;
@@ -343,6 +334,15 @@ function Poesias() {
   return (
     <>
       <ContainerMain>
+        <h1 style={{ textAlign: "center" }}>Esposição de Poesias</h1>
+        <hr
+          style={{
+            border: "none",
+            height: "2px",
+            backgroundColor: "#ffffff",
+            width: "130%",
+          }}
+        />
         <ContainerPoemas>
           {currentItems.map((item, i) => (
             <li key={i}>

@@ -8,6 +8,9 @@ export const ContainerMain = styled.div`
   align-items: center;
   padding: 100px 100px;
   
+  hr{
+    margin-bottom: 25px;
+  }
 
   .pagination {
   display: flex;
