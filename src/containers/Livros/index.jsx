@@ -23,7 +23,7 @@ function Livros() {
               <CardLivros img={alicepaismaravilhas} title="Alice no País das Maravilhas" autor="Lewis Carroll" id="alicepaismaravilhas" />
               <CardLivros img={romeuejulieta} title="Romeu e Julieta" autor="William Shakespeare" id="romeuejulieta" />
               <CardLivros img={meninomaluquinho} title="O Menino Maluquinho" autor="Ziraldo" id="meninomaluquinho" />
-              <CardLivros img={monica_agua_boa} title="Monica e a Água Boa" autor="Mauricio de Sousa" id="monica_agua_boa" />
+              <CardLivros img={monica_agua_boa} title="Monica e a Agua Boa" autor="Mauricio de Sousa" id="monica_agua_boa" />
               
         </ContainerLivros>
        </ContainerMain>
