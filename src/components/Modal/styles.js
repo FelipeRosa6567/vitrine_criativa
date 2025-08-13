@@ -13,7 +13,7 @@ export const Background = styled.div`
   z-index: 999;
 `
 export const Container = styled.div`
-  width: 80vw;
+  width: 60vw;
   display: flex;
   height: 100vh;
   justify-content: center;
