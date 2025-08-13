@@ -2,24 +2,22 @@ import styled from 'styled-components'
 
 export const ContainerMain = styled.div`
   display: flex;
-  height: 90vh;
+  height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 0 100px;
-  margin-top: 60px;
+  padding: 0;
+
+  button{
+    background-color: #ff0000;
+    color: #fff;
+    width: 130px;
+    height: 30px;
+    border-radius: 40px;
+    cursor: pointer;
+  }
   
 `
 
-export const PagesContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  transition: opacity 0.3s ease;
-  .flip{
-    opacity: 0;
-  }
-
-`

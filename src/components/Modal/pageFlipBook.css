@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
   gap: 5px;
+  
 }
 
 /* Cada "página" é só um wrapper para a animação */
@@ -40,5 +41,6 @@
 
 .page .react-pdf__Page canvas {
   max-width: 100%;
+  max-height: 88vh;
   height: auto;
 }
