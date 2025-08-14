@@ -18,8 +18,8 @@ export const ContainerMain = styled.div`
   button {
     background-color: #4d7cfe;
     color: #fff;
-    width: 130px;
-    height: 30px;
+    width: 10rem;
+    height: 35px;
     border-radius: 40px;
     cursor: pointer;
     border: none;
@@ -30,8 +30,8 @@ export const ContainerMain = styled.div`
       font-weight: 400;
     }
     button {
-      width: 220px;
-      height: 50px;
+      width: 5rem;
+      height: 25px;
     }
   }
   @media (max-width: 450px) {

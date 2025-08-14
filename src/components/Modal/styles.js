@@ -113,6 +113,7 @@ export const Navigation = styled.div`
     @media (max-width: 900px) {
       font-size: 14px;
       padding: 6px 10px;
+       margin-top: 2px;
     }
   }
 `;

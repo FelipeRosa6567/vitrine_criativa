@@ -1,5 +1,4 @@
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
 import {
   Container,
   Background,
@@ -23,6 +22,16 @@ function Modal({ pdfFile, setShowModal }) {
   const [pageNumber, setPageNumber] = useState(1);
   const [isFlipping, setIsFlipping] = useState(false);
   const [flipDirection, setFlipDirection] = useState("next");
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 900);
+
+  // Detecta mudança no tamanho da tela
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 900);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
@@ -33,7 +42,6 @@ function Modal({ pdfFile, setShowModal }) {
     setFlipDirection(direction);
     setIsFlipping(true);
 
-    // tempo para a rotação terminar
     setTimeout(() => {
       setPageNumber(newPage);
       setIsFlipping(false);
@@ -50,33 +58,57 @@ function Modal({ pdfFile, setShowModal }) {
             <BookContainer>
               <Document file={pdfFile} onLoadSuccess={onDocumentLoadSuccess}>
                 <Book>
-                  {/* Página esquerda */}
-                  <PageWrapper
-                    className={`left ${
-                      flipDirection === "prev" && isFlipping ? "flip-left" : ""
-                    }`}
-                  >
-                    {pageNumber > 1 && <Page pageNumber={pageNumber - 1} />}
-                  </PageWrapper>
-
-                  {/* Página direita */}
-                  <PageWrapper
-                    className={`right ${
-                      flipDirection === "next" && isFlipping ? "flip-right" : ""
-                    }`}
-                  >
-                    <Page pageNumber={pageNumber} />
-                  </PageWrapper>
+                  {isMobile ? (
+                    // Modo mobile → Apenas uma página
+                    <PageWrapper
+                      className={`right ${
+                        flipDirection === "next" && isFlipping ? "flip-right" : ""
+                      }`}
+                    >
+                      <Page pageNumber={pageNumber} />
+                    </PageWrapper>
+                  ) : (
+                    // Modo desktop → Duas páginas
+                    <>
+                      <PageWrapper
+                        className={`left ${
+                          flipDirection === "prev" && isFlipping
+                            ? "flip-left"
+                            : ""
+                        }`}
+                      >
+                        {pageNumber > 1 && (
+                          <Page pageNumber={pageNumber - 1} />
+                        )}
+                      </PageWrapper>
+                      <PageWrapper
+                        className={`right ${
+                          flipDirection === "next" && isFlipping
+                            ? "flip-right"
+                            : ""
+                        }`}
+                      >
+                        <Page pageNumber={pageNumber} />
+                      </PageWrapper>
+                    </>
+                  )}
                 </Book>
               </Document>
             </BookContainer>
 
             <Navigation>
               <button
-                onClick={() => changePage(Math.max(pageNumber - 2, 1), "prev")}
+                onClick={() =>
+                  changePage(
+                    isMobile
+                      ? Math.max(pageNumber - 1, 1)
+                      : Math.max(pageNumber - 2, 1),
+                    "prev"
+                  )
+                }
                 disabled={pageNumber <= 1 || isFlipping}
               >
-              Anterior
+                Anterior
               </button>
 
               <PageIndicator>
@@ -85,7 +117,12 @@ function Modal({ pdfFile, setShowModal }) {
 
               <button
                 onClick={() =>
-                  changePage(Math.min(pageNumber + 2, numPages), "next")
+                  changePage(
+                    isMobile
+                      ? Math.min(pageNumber + 1, numPages)
+                      : Math.min(pageNumber + 2, numPages),
+                    "next"
+                  )
                 }
                 disabled={pageNumber >= numPages || isFlipping}
               >
