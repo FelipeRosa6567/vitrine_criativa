@@ -76,7 +76,7 @@ function Modal({ pdfFile, setShowModal }) {
                 onClick={() => changePage(Math.max(pageNumber - 2, 1), "prev")}
                 disabled={pageNumber <= 1 || isFlipping}
               >
-                Página Anterior
+              Anterior
               </button>
 
               <PageIndicator>
@@ -89,7 +89,7 @@ function Modal({ pdfFile, setShowModal }) {
                 }
                 disabled={pageNumber >= numPages || isFlipping}
               >
-                Próxima Página
+                Próxima
               </button>
             </Navigation>
           </>
