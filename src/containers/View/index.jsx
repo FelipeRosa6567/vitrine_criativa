@@ -33,7 +33,7 @@ function View() {
         </ContainerFoto>
         <ContainerDescricao>
           <p>
-            <span>Descrição: </span>
+            <span>Descrição : </span>
             {state?.descricao}
           </p>
           <button onClick={() => setShowModal(true)}>Abrir Livro</button>
