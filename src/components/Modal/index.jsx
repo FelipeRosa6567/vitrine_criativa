@@ -1,23 +1,28 @@
 import { useState } from "react";
 
-import { Container, Background, Icone } from "./styles.js";
+import {
+  Container,
+  Background,
+  Icone,
+  BookContainer,
+  Book,
+  PageWrapper,
+  Navigation,
+  PageIndicator,
+} from "./styles.js";
 import { Document, Page, pdfjs } from "react-pdf";
 import workerSrc from "pdfjs-dist/build/pdf.worker.min.mjs?url";
 
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
-import "./pageFlipBook.css";
 
 function Modal({ pdfFile, setShowModal }) {
-
-  pdfjs.GlobalWorkerOptions.workerSrc = workerSrc;  
-  
+  pdfjs.GlobalWorkerOptions.workerSrc = workerSrc;
 
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
   const [isFlipping, setIsFlipping] = useState(false);
   const [flipDirection, setFlipDirection] = useState("next");
-
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
@@ -42,40 +47,42 @@ function Modal({ pdfFile, setShowModal }) {
 
         {pdfFile && (
           <>
-            <div className="book-container">
+            <BookContainer>
               <Document file={pdfFile} onLoadSuccess={onDocumentLoadSuccess}>
-                <div className="book">
+                <Book>
                   {/* Página esquerda */}
-                  <div
-                    className={`page left ${
+                  <PageWrapper
+                    className={`left ${
                       flipDirection === "prev" && isFlipping ? "flip-left" : ""
                     }`}
                   >
                     {pageNumber > 1 && <Page pageNumber={pageNumber - 1} />}
-                  </div>
+                  </PageWrapper>
 
                   {/* Página direita */}
-                  <div
-                    className={`page right ${
+                  <PageWrapper
+                    className={`right ${
                       flipDirection === "next" && isFlipping ? "flip-right" : ""
                     }`}
                   >
                     <Page pageNumber={pageNumber} />
-                  </div>
-                </div>
+                  </PageWrapper>
+                </Book>
               </Document>
-            </div>
+            </BookContainer>
 
-            <div style={{ marginTop: "10px", zIndex: 1000 }}>
+            <Navigation>
               <button
                 onClick={() => changePage(Math.max(pageNumber - 2, 1), "prev")}
                 disabled={pageNumber <= 1 || isFlipping}
               >
                 Página Anterior
               </button>
-              <span style={{ margin: "0 10px" }}>
+
+              <PageIndicator>
                 Página {pageNumber} de {numPages}
-              </span>
+              </PageIndicator>
+
               <button
                 onClick={() =>
                   changePage(Math.min(pageNumber + 2, numPages), "next")
@@ -84,7 +91,7 @@ function Modal({ pdfFile, setShowModal }) {
               >
                 Próxima Página
               </button>
-            </div>
+            </Navigation>
           </>
         )}
       </Container>
