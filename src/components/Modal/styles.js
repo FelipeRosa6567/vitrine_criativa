@@ -3,7 +3,7 @@ import { AiFillCloseSquare } from "react-icons/ai";
 import styled from "styled-components";
 
 export const Background = styled.div`
-  background-color: rgba(0, 0, 0, 1);
+  background-color: rgba(0, 0, 0, 0.7);
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -13,7 +13,7 @@ export const Background = styled.div`
   z-index: 999;
 `;
 export const Container = styled.div`
-  width: 60vw;
+  width: 70vw;
   display: flex;
   height: 100vh;
   justify-content: center;
@@ -21,27 +21,30 @@ export const Container = styled.div`
   align-items: center;
   max-width: 1200px;
   background-color: #000;
+  @media (max-width: 908px) {
+    width: 90vw;
+  }
+  @media (max-width: 450px) {
+  }
+
 `;
 export const Icone = styled(AiFillCloseSquare)`
   color: red;
-  font-size: 24px;
+  font-size: 54px;
   cursor: pointer;
   position: relative;
   right: -570px;
 `;
 
 export const BookContainer = styled.div`
-  perspective: 1100px;
+  perspective: 400px;
 `;
 
 export const Book = styled.div`
   display: flex;
   justify-content: center;
   gap: 5px;
-  @media (max-width: 900px) {
-    flex-direction: column; /* Empilha */
-    gap: 0;
-  }
+  
 `;
 
 export const PageWrapper = styled.div`
@@ -58,11 +61,11 @@ export const PageWrapper = styled.div`
   }
 
   &.flip-right {
-    transform: rotateY(-180deg);
+    transform: rotateY(-220deg);
   }
 
   &.flip-left {
-    transform: rotateY(180deg);
+    transform: rotateY(220deg);
   }
 
   /* Estilos internos do react-pdf */

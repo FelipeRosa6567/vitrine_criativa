@@ -13,7 +13,7 @@ function Livros() {
     
     {
       img: diario,
-      title: "Diario",
+      title: "Diario dos meus Sonhos",
       autor: "Felipe Rosa",
       id: "diario",
       descricao: `Algumas palavras não nascem para serem apenas lidas, elas chegam
