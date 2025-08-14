@@ -60,7 +60,8 @@ export const ContainerFoto = styled.div`
     font-size: 1.3rem;
   }
   img {
-    width: 300px;
+    height: 300px;
+    border-radius: 30px;
   }
 
   @media (max-width: 768px) {
