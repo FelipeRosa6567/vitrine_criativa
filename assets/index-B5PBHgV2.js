@@ -167,7 +167,7 @@ See https://reactjs.org/docs/forms.html#controlled-components`),j=Z.initialPage?
     text-align: center;
     margin: 10px 0;
   }
-`;function cE({livro:l}){const t=Sb();return Y.jsx(Y.Fragment,{children:Y.jsxs(lE,{children:[Y.jsx("img",{onClick:()=>t(`/view/${l.id}`,{state:{titulo:l.title,autor:l.autor,img:l.img,descricao:l.descricao}}),src:l.img,alt:"imagem-projeto"}),Y.jsxs("p",{children:["Titulo: ",l.title]}),Y.jsxs("p",{children:["Autor: ",l.autor]})]})})}const uE="/vitrine_criativa/assets/O%20diario%20perdido-BlgdySwM.png",hE="/vitrine_criativa/assets/aartedaguerra-BeRWfvbf.jpg",dE="/vitrine_criativa/assets/alicepaismaravilhas-D06StZaj.jpg",fE="/vitrine_criativa/assets/romeuejulieta-B83bGC-8.jpg",pE="/vitrine_criativa/assets/meninomaluquinho-CxviLptW.jpg",gE="/vitrine_criativa/assets/monica_agua_boa-BP0pECDg.jpg";function mE(){const l=[{img:uE,title:"Diario",autor:"Felipe Rosa",id:"diario",descricao:`Algumas palavras não nascem para serem apenas lidas, elas chegam
+`;function cE({livro:l}){const t=Sb();return Y.jsx(Y.Fragment,{children:Y.jsxs(lE,{children:[Y.jsx("img",{onClick:()=>t(`/view/${l.id}`,{state:{titulo:l.title,autor:l.autor,img:l.img,descricao:l.descricao}}),src:l.img,alt:"imagem-projeto"}),Y.jsxs("p",{children:["Titulo: ",l.title]}),Y.jsxs("p",{children:["Autor: ",l.autor]})]})})}const uE="/vitrine_criativa/assets/O%20diario%20perdido-BlgdySwM.png",hE="/vitrine_criativa/assets/aartedaguerra-BeRWfvbf.jpg",dE="/vitrine_criativa/assets/alicepaismaravilhas-D06StZaj.jpg",fE="/vitrine_criativa/assets/romeuejulieta-B83bGC-8.jpg",pE="/vitrine_criativa/assets/meninomaluquinho-CxviLptW.jpg",gE="/vitrine_criativa/assets/monica_agua_boa-BP0pECDg.jpg";function mE(){const l=[{img:uE,title:"Diario dos meus Sonhos",autor:"Felipe Rosa",id:"diario",descricao:`Algumas palavras não nascem para serem apenas lidas, elas chegam
                   como tempestades, invadem o peito e só encontram abrigo no papel.
                   Este diário é feito dessas tempestades e calmarias, de versos que
                   carregam a fúria do mar e o silêncio da madrugada`},{img:hE,title:"A arte da Guerra",autor:"SUN TZU",id:"aartedaguerra",descricao:"Filósofo que se tornou general cujo nome individual era Wu, nasceu no Estado de Ch’i na China, próximo de 500 a.C., em um auge das ciências militares e legislativas daquele país. Sun Tzu escreveu a “Arte da Guerra”."},{img:dE,title:"Alice no País das Maravilhas",autor:"Lewis Carroll",id:"alicepaismaravilhas",descricao:"Charles Lutwidge Dodgson mais conhecido como CARROLL, LEWIS, seu nome está inscrito na história da literatura mundial por ser o autor de Alice no País das Maravilhas, o mais estranho e fascinante livro para crianças jamais escrito."},{img:fE,title:"Romeu e Julieta",autor:"William Shakespeare",id:"romeuejulieta",descricao:"Há muito tempo duas famílias banham em sangue as ruas de Verona. Enquanto isso, na penumbra das madrugadas, ardem as brasas de um amor secreto. Romeu, filho dos Montéquio, e Julieta, desafiam a rixa familiar e sonham com um impossível futuro, longe da violência e da loucura."},{img:pE,title:"O Menino Maluquinho",autor:"Ziraldo",id:"meninomaluquinho",descricao:"Nessa versão disponibilizada, gratuitamente, pelo grande Ziraldo, verso e desenho contam a história de um menino traquinas que aprontava muita confusão. Alegria da casa, liderava a garotada, era sabido e um amigão. Fazia versinhos, canções, inventava brincadeiras."},{img:gE,title:"Monica e a Agua Boa",autor:"Mauricio de Sousa",id:"monica_agua_boa",descricao:"A Turma da Mônica ensina de forma divertida a importância da água potável para a saúde. Com histórias cativantes, os personagens mostram como preservar esse recurso essencial para o planeta e o bem-estar de todos."}];return Y.jsx(Y.Fragment,{children:Y.jsxs(rE,{children:[Y.jsx("h1",{style:{textAlign:"center"},children:"Esposição de livros"}),Y.jsx("hr",{style:{border:"none",height:"2px",backgroundColor:"#ffffff",width:"130%"}}),Y.jsx(oE,{children:l.map(t=>Y.jsx(cE,{livro:t},t.id))})]})})}const yE=te.div`
@@ -300,7 +300,7 @@ See https://reactjs.org/docs/forms.html#controlled-components`),j=Z.initialPage?
   @media (max-width: 450px) {
   }
 `;var ev={color:void 0,size:void 0,className:void 0,style:void 0,attr:void 0},Ny=Ge.createContext&&Ge.createContext(ev),CE=["attr","size","title"];function RE(l,t){if(l==null)return{};var e=ME(l,t),s,a;if(Object.getOwnPropertySymbols){var o=Object.getOwnPropertySymbols(l);for(a=0;a<o.length;a++)s=o[a],!(t.indexOf(s)>=0)&&Object.prototype.propertyIsEnumerable.call(l,s)&&(e[s]=l[s])}return e}function ME(l,t){if(l==null)return{};var e={};for(var s in l)if(Object.prototype.hasOwnProperty.call(l,s)){if(t.indexOf(s)>=0)continue;e[s]=l[s]}return e}function sc(){return sc=Object.assign?Object.assign.bind():function(l){for(var t=1;t<arguments.length;t++){var e=arguments[t];for(var s in e)Object.prototype.hasOwnProperty.call(e,s)&&(l[s]=e[s])}return l},sc.apply(this,arguments)}function ky(l,t){var e=Object.keys(l);if(Object.getOwnPropertySymbols){var s=Object.getOwnPropertySymbols(l);t&&(s=s.filter(function(a){return Object.getOwnPropertyDescriptor(l,a).enumerable})),e.push.apply(e,s)}return e}function ac(l){for(var t=1;t<arguments.length;t++){var e=arguments[t]!=null?arguments[t]:{};t%2?ky(Object(e),!0).forEach(function(s){LE(l,s,e[s])}):Object.getOwnPropertyDescriptors?Object.defineProperties(l,Object.getOwnPropertyDescriptors(e)):ky(Object(e)).forEach(function(s){Object.defineProperty(l,s,Object.getOwnPropertyDescriptor(e,s))})}return l}function LE(l,t,e){return t=DE(t),t in l?Object.defineProperty(l,t,{value:e,enumerable:!0,configurable:!0,writable:!0}):l[t]=e,l}function DE(l){var t=OE(l,"string");return typeof t=="symbol"?t:t+""}function OE(l,t){if(typeof l!="object"||!l)return l;var e=l[Symbol.toPrimitive];if(e!==void 0){var s=e.call(l,t);if(typeof s!="object")return s;throw new TypeError("@@toPrimitive must return a primitive value.")}return(t==="string"?String:Number)(l)}function nv(l){return l&&l.map((t,e)=>Ge.createElement(t.tag,ac({key:e},t.attr),nv(t.child)))}function NE(l){return t=>Ge.createElement(kE,sc({attr:ac({},l.attr)},t),nv(l.child))}function kE(l){var t=e=>{var{attr:s,size:a,title:o}=l,u=RE(l,CE),h=a||e.size||"1em",d;return e.className&&(d=e.className),l.className&&(d=(d?d+" ":"")+l.className),Ge.createElement("svg",sc({stroke:"currentColor",fill:"currentColor",strokeWidth:"0"},e.attr,s,u,{className:d,style:ac(ac({color:l.color||e.color},e.style),l.style),height:h,width:h,xmlns:"http://www.w3.org/2000/svg"}),o&&Ge.createElement("title",null,o),l.children)};return Ny!==void 0?Ge.createElement(Ny.Consumer,null,e=>t(e)):t(ev)}function PE(l){return NE({attr:{viewBox:"0 0 1024 1024",fill:"currentColor",fillRule:"evenodd"},child:[{tag:"path",attr:{d:"M880 112c17.7 0 32 14.3 32 32v736c0 17.7-14.3 32-32 32H144c-17.7 0-32-14.3-32-32V144c0-17.7 14.3-32 32-32ZM639.978 338.82l-.034.006c-.023.007-.042.018-.083.059L512 466.745l-127.86-127.86c-.042-.041-.06-.052-.084-.059a.118.118 0 0 0-.07 0c-.022.007-.041.018-.082.059l-45.02 45.019c-.04.04-.05.06-.058.083a.118.118 0 0 0 0 .07l.01.022a.268.268 0 0 0 .049.06L466.745 512l-127.86 127.862c-.041.04-.052.06-.059.083a.118.118 0 0 0 0 .07c.007.022.018.041.059.082l45.019 45.02c.04.04.06.05.083.058a.118.118 0 0 0 .07 0c.022-.007.041-.018.082-.059L512 557.254l127.862 127.861c.04.041.06.052.083.059a.118.118 0 0 0 .07 0c.022-.007.041-.018.082-.059l45.02-45.019c.04-.04.05-.06.058-.083a.118.118 0 0 0 0-.07l-.01-.022a.268.268 0 0 0-.049-.06L557.254 512l127.861-127.86c.041-.042.052-.06.059-.084a.118.118 0 0 0 0-.07c-.007-.022-.018-.041-.059-.082l-45.019-45.02c-.04-.04-.06-.05-.083-.058a.118.118 0 0 0-.07 0Z"},child:[]}]})(l)}const IE=te.div`
-  background-color: rgba(0, 0, 0, 1);
+  background-color: rgba(0, 0, 0, 0.7);
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -309,7 +309,7 @@ See https://reactjs.org/docs/forms.html#controlled-components`),j=Z.initialPage?
   align-items: center;
   z-index: 999;
 `,zE=te.div`
-  width: 60vw;
+  width: 70vw;
   display: flex;
   height: 100vh;
   justify-content: center;
@@ -317,22 +317,25 @@ See https://reactjs.org/docs/forms.html#controlled-components`),j=Z.initialPage?
   align-items: center;
   max-width: 1200px;
   background-color: #000;
+  @media (max-width: 908px) {
+    width: 90vw;
+  }
+  @media (max-width: 450px) {
+  }
+
 `,BE=te(PE)`
   color: red;
-  font-size: 24px;
+  font-size: 54px;
   cursor: pointer;
   position: relative;
   right: -570px;
 `,HE=te.div`
-  perspective: 1100px;
+  perspective: 400px;
 `,FE=te.div`
   display: flex;
   justify-content: center;
   gap: 5px;
-  @media (max-width: 900px) {
-    flex-direction: column; /* Empilha */
-    gap: 0;
-  }
+  
 `,td=te.div`
   transform-origin: left center;
   transition: transform 0.6s ease;
@@ -347,11 +350,11 @@ See https://reactjs.org/docs/forms.html#controlled-components`),j=Z.initialPage?
   }
 
   &.flip-right {
-    transform: rotateY(-180deg);
+    transform: rotateY(-220deg);
   }
 
   &.flip-left {
-    transform: rotateY(180deg);
+    transform: rotateY(220deg);
   }
 
   /* Estilos internos do react-pdf */
