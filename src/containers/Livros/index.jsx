@@ -21,6 +21,7 @@ function Livros() {
                   Este diário é feito dessas tempestades e calmarias, de versos que
                   carregam a fúria do mar e o silêncio da madrugada`,
     },
+    
     {
       img: aartedaguerra,
       title: "A arte da Guerra",

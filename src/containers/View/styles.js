@@ -1,4 +1,13 @@
-import styled from "styled-components";
+import styled, { keyframes } from 'styled-components'
+
+const scale = keyframes`
+    from {
+        transform: scale(0);
+    }
+    to{
+        transform: scale(1);
+    }
+`
 
 export const ContainerMain = styled.div`
   display: flex;
@@ -62,6 +71,7 @@ export const ContainerFoto = styled.div`
   img {
     height: 300px;
     border-radius: 30px;
+    animation: ${scale} 0.5s linear;
   }
 
   @media (max-width: 768px) {

@@ -16,7 +16,7 @@ function CardLivros({livro }) {
           src={livro.img}
           alt="imagem-projeto"
         />
-        <p>Titulo: {livro.title}</p>
+        <p>{livro.title}</p>
         <p>Autor: {livro.autor}</p>
       </Container>
     </>
