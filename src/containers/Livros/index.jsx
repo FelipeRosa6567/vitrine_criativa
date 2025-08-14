@@ -19,7 +19,7 @@ function Livros() {
       descricao: `Algumas palavras não nascem para serem apenas lidas, elas chegam
                   como tempestades, invadem o peito e só encontram abrigo no papel.
                   Este diário é feito dessas tempestades e calmarias, de versos que
-                  carregam a fúria do mar e o silêncio da madrugada.`,
+                  carregam a fúria do mar e o silêncio da madrugada`,
     },
     {
       img: aartedaguerra,
