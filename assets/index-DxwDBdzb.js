@@ -158,6 +158,7 @@ See https://reactjs.org/docs/forms.html#controlled-components`),j=Z.initialPage?
 
   img {
     width: 100%;
+    height: 200px;
     margin-bottom: 10px;
     padding: 0 10px;
     border-radius: 30px;
@@ -167,7 +168,7 @@ See https://reactjs.org/docs/forms.html#controlled-components`),j=Z.initialPage?
     text-align: center;
     margin: 10px 0;
   }
-`;function cE({livro:l}){const t=Sb();return Y.jsx(Y.Fragment,{children:Y.jsxs(lE,{children:[Y.jsx("img",{onClick:()=>t(`/view/${l.id}`,{state:{titulo:l.title,autor:l.autor,img:l.img,descricao:l.descricao}}),src:l.img,alt:"imagem-projeto"}),Y.jsxs("p",{children:["Titulo: ",l.title]}),Y.jsxs("p",{children:["Autor: ",l.autor]})]})})}const uE="/vitrine_criativa/assets/O%20diario%20perdido-BlgdySwM.png",hE="/vitrine_criativa/assets/aartedaguerra-BeRWfvbf.jpg",dE="/vitrine_criativa/assets/alicepaismaravilhas-D06StZaj.jpg",fE="/vitrine_criativa/assets/romeuejulieta-B83bGC-8.jpg",pE="/vitrine_criativa/assets/meninomaluquinho-CxviLptW.jpg",gE="/vitrine_criativa/assets/monica_agua_boa-BP0pECDg.jpg";function mE(){const l=[{img:uE,title:"Diario dos meus Sonhos",autor:"Felipe Rosa",id:"diario",descricao:`Algumas palavras não nascem para serem apenas lidas, elas chegam
+`;function cE({livro:l}){const t=Sb();return Y.jsx(Y.Fragment,{children:Y.jsxs(lE,{children:[Y.jsx("img",{onClick:()=>t(`/view/${l.id}`,{state:{titulo:l.title,autor:l.autor,img:l.img,descricao:l.descricao}}),src:l.img,alt:"imagem-projeto"}),Y.jsxs("p",{children:["Titulo: ",l.title]}),Y.jsxs("p",{children:["Autor: ",l.autor]})]})})}const uE="/vitrine_criativa/assets/O%20diario%20perdido-BlgdySwM.png",hE="/vitrine_criativa/assets/aartedaguerra-BeRWfvbf.jpg",dE="/vitrine_criativa/assets/alicepaismaravilhas-D06StZaj.jpg",fE="/vitrine_criativa/assets/romeuejulieta-B83bGC-8.jpg",pE="/vitrine_criativa/assets/meninomaluquinho-CxviLptW.jpg",gE="/vitrine_criativa/assets/monica_agua_boa-BP0pECDg.jpg";function mE(){const l=[{img:uE,title:"O diario perdido dos meus poemas",autor:"Felipe Rosa",id:"diario",descricao:`Algumas palavras não nascem para serem apenas lidas, elas chegam
                   como tempestades, invadem o peito e só encontram abrigo no papel.
                   Este diário é feito dessas tempestades e calmarias, de versos que
                   carregam a fúria do mar e o silêncio da madrugada`},{img:hE,title:"A arte da Guerra",autor:"SUN TZU",id:"aartedaguerra",descricao:"Filósofo que se tornou general cujo nome individual era Wu, nasceu no Estado de Ch’i na China, próximo de 500 a.C., em um auge das ciências militares e legislativas daquele país. Sun Tzu escreveu a “Arte da Guerra”."},{img:dE,title:"Alice no País das Maravilhas",autor:"Lewis Carroll",id:"alicepaismaravilhas",descricao:"Charles Lutwidge Dodgson mais conhecido como CARROLL, LEWIS, seu nome está inscrito na história da literatura mundial por ser o autor de Alice no País das Maravilhas, o mais estranho e fascinante livro para crianças jamais escrito."},{img:fE,title:"Romeu e Julieta",autor:"William Shakespeare",id:"romeuejulieta",descricao:"Há muito tempo duas famílias banham em sangue as ruas de Verona. Enquanto isso, na penumbra das madrugadas, ardem as brasas de um amor secreto. Romeu, filho dos Montéquio, e Julieta, desafiam a rixa familiar e sonham com um impossível futuro, longe da violência e da loucura."},{img:pE,title:"O Menino Maluquinho",autor:"Ziraldo",id:"meninomaluquinho",descricao:"Nessa versão disponibilizada, gratuitamente, pelo grande Ziraldo, verso e desenho contam a história de um menino traquinas que aprontava muita confusão. Alegria da casa, liderava a garotada, era sabido e um amigão. Fazia versinhos, canções, inventava brincadeiras."},{img:gE,title:"Monica e a Agua Boa",autor:"Mauricio de Sousa",id:"monica_agua_boa",descricao:"A Turma da Mônica ensina de forma divertida a importância da água potável para a saúde. Com histórias cativantes, os personagens mostram como preservar esse recurso essencial para o planeta e o bem-estar de todos."}];return Y.jsx(Y.Fragment,{children:Y.jsxs(rE,{children:[Y.jsx("h1",{style:{textAlign:"center"},children:"Esposição de livros"}),Y.jsx("hr",{style:{border:"none",height:"2px",backgroundColor:"#ffffff",width:"130%"}}),Y.jsx(oE,{children:l.map(t=>Y.jsx(cE,{livro:t},t.id))})]})})}const yE=te.div`
@@ -250,7 +251,8 @@ See https://reactjs.org/docs/forms.html#controlled-components`),j=Z.initialPage?
     font-size: 1.3rem;
   }
   img {
-    width: 300px;
+    height: 300px;
+    border-radius: 30px;
   }
 
   @media (max-width: 768px) {
