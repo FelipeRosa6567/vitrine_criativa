@@ -5,12 +5,16 @@ import styled from "styled-components";
 export const Background = styled.div`
   background-color: rgba(0, 0, 0, 0.7);
   width: 100dvw;
-  height: 100dvh;
+  height: 90%;
+  
   position: fixed;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   z-index: 999;
+   @media (max-width: 908px) {
+    top:-50px;
+  }
 `;
 export const Container = styled.div`
   width: 70dvw;
@@ -23,6 +27,7 @@ export const Container = styled.div`
   background-color: #000;
   @media (max-width: 908px) {
     width: 90dvw;
+    
   }
   @media (max-width: 450px) {
   }

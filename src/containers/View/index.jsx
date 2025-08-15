@@ -19,8 +19,9 @@ function View() {
   const pdfFile = `/vitrine_criativa/livros/${id}.pdf`;
 
   return (
+    <>
+    {showModal && <Modal pdfFile={pdfFile} setShowModal={setShowModal} />}
     <ContainerMain style={{ textAlign: "center", padding: "20px" }}>
-      {showModal && <Modal pdfFile={pdfFile} setShowModal={setShowModal} />}
       <h2>
         <span>{state?.titulo} </span>
       </h2>
@@ -40,6 +41,7 @@ function View() {
         </ContainerDescricao>
       </ContainerViewLivros>
     </ContainerMain>
+    </>
   );
 }
 
