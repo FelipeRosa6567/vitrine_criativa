@@ -6,7 +6,7 @@ export const ContainerMain = styled.div`
   height: 100vh;
   width: 100vw;
   align-items: center;
-  padding: 100px 100px;
+  padding: 100px 50px;
   
     h1 {
     margin-bottom: 25px;
@@ -35,6 +35,12 @@ export const ContainerMain = styled.div`
   color: white;
   font-weight: bold;
 }
+ @media (max-width: 768px) {
+    padding: 100px 10px;
+  }
+  @media (max-width: 450px) {
+    padding: 100px 0px;
+  }
 `
 export const ContainerPoemas = styled.ul`
   display: flex;
