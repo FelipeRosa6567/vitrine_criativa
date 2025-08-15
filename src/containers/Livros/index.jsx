@@ -3,16 +3,10 @@ import { ContainerMain, ContainerLivros } from "./styles";
 import CardLivros from "../../components/CardLivros";
 import ReactPaginate from "react-paginate";
 
-import diario from "../../assets/livros/O diario perdido.png";
-import aartedaguerra from "../../assets/livros/aartedaguerra.jpg";
-import alicepaismaravilhas from "../../assets/livros/alicepaismaravilhas.jpg";
-import romeuejulieta from "../../assets/livros/romeuejulieta.jpg";
-import meninomaluquinho from "../../assets/livros/meninomaluquinho.jpg";
-import monica_agua_boa from "../../assets/livros/monica_agua_boa.jpg";
 
 const livros = [
   {
-    img: diario,
+    img: "/vitrine_criativa/livros/O diario perdido.png",
     title: "O diario perdido dos meus poemas",
     autor: "Felipe Rosa",
     id: "diario",
@@ -22,7 +16,7 @@ const livros = [
                   carregam a fúria do mar e o silêncio da madrugada`,
   },
   {
-    img: aartedaguerra,
+    img: "/vitrine_criativa/livros/aartedaguerra.jpg",
     title: "A arte da Guerra",
     autor: "SUN TZU",
     id: "aartedaguerra",
@@ -30,7 +24,7 @@ const livros = [
       "Filósofo que se tornou general cujo nome individual era Wu, nasceu no Estado de Ch’i na China, próximo de 500 a.C., em um auge das ciências militares e legislativas daquele país. Sun Tzu escreveu a “Arte da Guerra”.",
   },
   {
-    img: alicepaismaravilhas,
+    img: "/vitrine_criativa/livros/alicepaismaravilhas.jpg",
     title: "Alice no País das Maravilhas",
     autor: "Lewis Carroll",
     id: "alicepaismaravilhas",
@@ -38,7 +32,7 @@ const livros = [
       "Charles Lutwidge Dodgson mais conhecido como CARROLL, LEWIS, seu nome está inscrito na história da literatura mundial por ser o autor de Alice no País das Maravilhas, o mais estranho e fascinante livro para crianças jamais escrito.",
   },
   {
-    img: romeuejulieta,
+    img: "/vitrine_criativa/livros/romeuejulieta.jpg",
     title: "Romeu e Julieta",
     autor: "William Shakespeare",
     id: "romeuejulieta",
@@ -46,7 +40,7 @@ const livros = [
       "Há muito tempo duas famílias banham em sangue as ruas de Verona. Enquanto isso, na penumbra das madrugadas, ardem as brasas de um amor secreto. Romeu, filho dos Montéquio, e Julieta, desafiam a rixa familiar e sonham com um impossível futuro, longe da violência e da loucura.",
   },
   {
-    img: meninomaluquinho,
+    img: "/vitrine_criativa/livros/meninomaluquinho.jpg",
     title: "O Menino Maluquinho",
     autor: "Ziraldo",
     id: "meninomaluquinho",
@@ -54,123 +48,38 @@ const livros = [
       "Nessa versão disponibilizada, gratuitamente, pelo grande Ziraldo, verso e desenho contam a história de um menino traquinas que aprontava muita confusão. Alegria da casa, liderava a garotada, era sabido e um amigão. Fazia versinhos, canções, inventava brincadeiras.",
   },
   {
-    img: monica_agua_boa,
+    img: "/vitrine_criativa/livros/monica_agua_boa.jpg",
     title: "Monica e a Agua Boa",
     autor: "Mauricio de Sousa",
     id: "monica_agua_boa",
     descricao:
-      "A Turma da Mônica ensina de forma divertida a importância da água potável para a saúde. Com histórias cativantes, os personagens mostram como preservar esse recurso essencial para o planeta e o bem-estar de todos.",
+                "A Turma da Mônica ensina de forma divertida a importância da água potável para a saúde. Com histórias cativantes, os personagens mostram como preservar esse recurso essencial para o planeta e o bem-estar de todos.",
+  },
+  {
+    img: "/vitrine_criativa/livros/almanaque da monica 01.png",
+    title: "Almanaque da monica 01",
+    autor: "Mauricio de Sousa",
+    id: "almanaque da monica 01",
+    descricao: `Publicado em 1987 pela Editora Globo, o Almanaque da Mônica nº 1 
+                reuniu algumas das aventuras mais divertidas e marcantes da Turma da Mônica 
+                produzidas entre o final dos anos 1970 e início dos anos 1980. Em suas páginas, 
+                Mônica, Cebolinha, Magali, Cascão e outros personagens clássicos vivem situações 
+                cheias de humor, confusão e amizade, alternando histórias do cotidiano, tramas inusitadas e 
+                participações de figuras queridas como o Anjinho. Com mais de 100 páginas, essa edição inaugura a 
+                fase dos almanaques na nova casa editorial, preservando o espírito das histórias originais e garantindo muitas risadas 
+                para leitores de todas as idades.`,
   },
   ////////////////////////////////////////////////
-   {
-    img: diario,
-    title: "O diario perdido dos meus poemas",
-    autor: "Felipe Rosa",
-    id: "diario2",
-    descricao: `Algumas palavras não nascem para serem apenas lidas, elas chegam
-                  como tempestades, invadem o peito e só encontram abrigo no papel.
-                  Este diário é feito dessas tempestades e calmarias, de versos que
-                  carregam a fúria do mar e o silêncio da madrugada`,
-  },
-  {
-    img: aartedaguerra,
-    title: "A arte da Guerra",
-    autor: "SUN TZU",
-    id: "aartedaguerra2",
-    descricao:
-      "Filósofo que se tornou general cujo nome individual era Wu, nasceu no Estado de Ch’i na China, próximo de 500 a.C., em um auge das ciências militares e legislativas daquele país. Sun Tzu escreveu a “Arte da Guerra”.",
-  },
-  {
-    img: alicepaismaravilhas,
-    title: "Alice no País das Maravilhas",
-    autor: "Lewis Carroll",
-    id: "alicepaismaravilhas2",
-    descricao:
-      "Charles Lutwidge Dodgson mais conhecido como CARROLL, LEWIS, seu nome está inscrito na história da literatura mundial por ser o autor de Alice no País das Maravilhas, o mais estranho e fascinante livro para crianças jamais escrito.",
-  },
-  {
-    img: romeuejulieta,
-    title: "Romeu e Julieta",
-    autor: "William Shakespeare",
-    id: "romeuejulieta2",
-    descricao:
-      "Há muito tempo duas famílias banham em sangue as ruas de Verona. Enquanto isso, na penumbra das madrugadas, ardem as brasas de um amor secreto. Romeu, filho dos Montéquio, e Julieta, desafiam a rixa familiar e sonham com um impossível futuro, longe da violência e da loucura.",
-  },
-  {
-    img: meninomaluquinho,
-    title: "O Menino Maluquinho",
-    autor: "Ziraldo",
-    id: "meninomaluquinho2",
-    descricao:
-      "Nessa versão disponibilizada, gratuitamente, pelo grande Ziraldo, verso e desenho contam a história de um menino traquinas que aprontava muita confusão. Alegria da casa, liderava a garotada, era sabido e um amigão. Fazia versinhos, canções, inventava brincadeiras.",
-  },
-  {
-    img: monica_agua_boa,
-    title: "Monica e a Agua Boa",
-    autor: "Mauricio de Sousa",
-    id: "monica_agua_boa2",
-    descricao:
-      "A Turma da Mônica ensina de forma divertida a importância da água potável para a saúde. Com histórias cativantes, os personagens mostram como preservar esse recurso essencial para o planeta e o bem-estar de todos.",
-  },
-  ////////////////////////////////////////////////
-   {
-    img: diario,
-    title: "O diario perdido dos meus poemas",
-    autor: "Felipe Rosa",
-    id: "diario3",
-    descricao: `Algumas palavras não nascem para serem apenas lidas, elas chegam
-                  como tempestades, invadem o peito e só encontram abrigo no papel.
-                  Este diário é feito dessas tempestades e calmarias, de versos que
-                  carregam a fúria do mar e o silêncio da madrugada`,
-  },
-  {
-    img: aartedaguerra,
-    title: "A arte da Guerra",
-    autor: "SUN TZU",
-    id: "aartedaguerra3",
-    descricao:
-      "Filósofo que se tornou general cujo nome individual era Wu, nasceu no Estado de Ch’i na China, próximo de 500 a.C., em um auge das ciências militares e legislativas daquele país. Sun Tzu escreveu a “Arte da Guerra”.",
-  },
-  {
-    img: alicepaismaravilhas,
-    title: "Alice no País das Maravilhas",
-    autor: "Lewis Carroll",
-    id: "alicepaismaravilhas3",
-    descricao:
-      "Charles Lutwidge Dodgson mais conhecido como CARROLL, LEWIS, seu nome está inscrito na história da literatura mundial por ser o autor de Alice no País das Maravilhas, o mais estranho e fascinante livro para crianças jamais escrito.",
-  },
-  {
-    img: romeuejulieta,
-    title: "Romeu e Julieta",
-    autor: "William Shakespeare",
-    id: "romeuejulieta3",
-    descricao:
-      "Há muito tempo duas famílias banham em sangue as ruas de Verona. Enquanto isso, na penumbra das madrugadas, ardem as brasas de um amor secreto. Romeu, filho dos Montéquio, e Julieta, desafiam a rixa familiar e sonham com um impossível futuro, longe da violência e da loucura.",
-  },
-  {
-    img: meninomaluquinho,
-    title: "O Menino Maluquinho",
-    autor: "Ziraldo",
-    id: "meninomaluquinho3",
-    descricao:
-      "Nessa versão disponibilizada, gratuitamente, pelo grande Ziraldo, verso e desenho contam a história de um menino traquinas que aprontava muita confusão. Alegria da casa, liderava a garotada, era sabido e um amigão. Fazia versinhos, canções, inventava brincadeiras.",
-  },
-  {
-    img: monica_agua_boa,
-    title: "Monica e a Agua Boa",
-    autor: "Mauricio de Sousa",
-    id: "monica_agua_boa3",
-    descricao:
-      "A Turma da Mônica ensina de forma divertida a importância da água potável para a saúde. Com histórias cativantes, os personagens mostram como preservar esse recurso essencial para o planeta e o bem-estar de todos.",
-  },
 ];
-
 
 const livrosPerPage = 9;
 
 // Função para normalizar strings
 const normalize = (s = "") =>
-  s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  s
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
 
 function Livros() {
   const [busca, setBusca] = useState("");
@@ -184,8 +93,7 @@ function Livros() {
     } else {
       const filtrados = livros.filter(
         (item) =>
-          normalize(item.title).includes(q) ||
-          normalize(item.autor).includes(q)
+          normalize(item.title).includes(q) || normalize(item.autor).includes(q)
       );
       setResultados(filtrados);
     }
