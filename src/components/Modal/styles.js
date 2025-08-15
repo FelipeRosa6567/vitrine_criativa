@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 export const Background = styled.div`
   background-color: rgba(0, 0, 0, 0.7);
-  width: 100dvw;
+  width: 100%;
   height: 90%;
   
   position: fixed;
@@ -13,7 +13,7 @@ export const Background = styled.div`
   align-items: flex-start;
   z-index: 999;
    @media (max-width: 908px) {
-    top:-50px;
+    top:75px;
   }
 `;
 export const Container = styled.div`
@@ -27,6 +27,7 @@ export const Container = styled.div`
   background-color: #000;
   @media (max-width: 908px) {
     width: 90dvw;
+    height: 80dvh;
     
   }
   @media (max-width: 450px) {
