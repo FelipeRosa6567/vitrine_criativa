@@ -372,7 +372,7 @@ function Poesias() {
       <ContainerMain>
         <h1 style={{ textAlign: "center" }}>Exposição de Poesias</h1>
 
-        {/* Campo de busca + botões */}
+        {/* Campo de busca */}
         <div
           style={{
             display: "flex",
@@ -388,7 +388,7 @@ function Poesias() {
             value={busca}
             onChange={(e) => setBusca(e.target.value)}
             onKeyDown={onKeyDown}
-            placeholder="Buscar por título, autor ou verso..."
+            placeholder="Buscar por título ou autor..."
             style={{
               padding: "10px",
               fontSize: "16px",
@@ -396,7 +396,7 @@ function Poesias() {
               border: "1px solid #ccc",
               width: "50%",
               maxWidth: "400px",
-              color: "#000"
+              color: "#000",
             }}
           />
           <button
@@ -408,7 +408,7 @@ function Poesias() {
               cursor: "pointer",
               width: "20%",
               maxWidth: "400px",
-              color: "#000"
+              color: "#000",
             }}
           >
             Buscar
@@ -423,7 +423,7 @@ function Poesias() {
               opacity: busca ? 1 : 0.6,
               width: "20%",
               maxWidth: "400px",
-              color: "#000"
+              color: "#000",
             }}
             disabled={!busca}
           >

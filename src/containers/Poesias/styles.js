@@ -8,7 +8,10 @@ export const ContainerMain = styled.div`
   align-items: center;
   padding: 100px 100px;
   
-  hr{
+    h1 {
+    margin-bottom: 25px;
+  }
+    hr{
     margin-bottom: 25px;
   }
 

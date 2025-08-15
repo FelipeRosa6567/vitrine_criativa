@@ -17,7 +17,7 @@ export const Background = styled.div`
   }
 `;
 export const Container = styled.div`
-  width: 70dvw;
+  width: 60dvw;
   display: flex;
   height: 100dvh;
   justify-content: center;
