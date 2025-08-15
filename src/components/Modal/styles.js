@@ -4,8 +4,8 @@ import styled from "styled-components";
 
 export const Background = styled.div`
   background-color: rgba(0, 0, 0, 0.7);
-  width: 100vw;
-  height: 100vh;
+  width: 100dvw;
+  height: 100dvh;
   position: fixed;
   display: flex;
   justify-content: center;
@@ -13,16 +13,16 @@ export const Background = styled.div`
   z-index: 999;
 `;
 export const Container = styled.div`
-  width: 70vw;
+  width: 70dvw;
   display: flex;
-  height: 100vh;
+  height: 100dvh;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   max-width: 1200px;
   background-color: #000;
   @media (max-width: 908px) {
-    width: 90vw;
+    width: 90dvw;
   }
   @media (max-width: 450px) {
   }
@@ -75,7 +75,7 @@ export const PageWrapper = styled.div`
 
   .react-pdf__Page canvas {
     max-width: 100%;
-    max-height: 90vh;
+    max-height: 90dvh;
     height: auto;
   }
 

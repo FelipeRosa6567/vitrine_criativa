@@ -12,6 +12,30 @@ export const ContainerMain = styled.div`
   h1 {
     margin-bottom: 25px;
   }
+    hr{
+    margin-bottom: 25px;
+  }
+
+  .pagination {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  
+}
+
+.pagination li {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 25px;
+  cursor: pointer;
+  
+}
+
+.pagination .active {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
   @media (max-width: 768px) {
     padding: 100px 10px;
   }
