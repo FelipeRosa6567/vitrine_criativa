@@ -333,7 +333,7 @@ See https://reactjs.org/docs/forms.html#controlled-components`),U=Z.initialPage?
   }
 `;var gb={color:void 0,size:void 0,className:void 0,style:void 0,attr:void 0},Yy=Ge.createContext&&Ge.createContext(gb),OE=["attr","size","title"];function NE(l,t){if(l==null)return{};var e=kE(l,t),s,a;if(Object.getOwnPropertySymbols){var o=Object.getOwnPropertySymbols(l);for(a=0;a<o.length;a++)s=o[a],!(t.indexOf(s)>=0)&&Object.prototype.propertyIsEnumerable.call(l,s)&&(e[s]=l[s])}return e}function kE(l,t){if(l==null)return{};var e={};for(var s in l)if(Object.prototype.hasOwnProperty.call(l,s)){if(t.indexOf(s)>=0)continue;e[s]=l[s]}return e}function cc(){return cc=Object.assign?Object.assign.bind():function(l){for(var t=1;t<arguments.length;t++){var e=arguments[t];for(var s in e)Object.prototype.hasOwnProperty.call(e,s)&&(l[s]=e[s])}return l},cc.apply(this,arguments)}function $y(l,t){var e=Object.keys(l);if(Object.getOwnPropertySymbols){var s=Object.getOwnPropertySymbols(l);t&&(s=s.filter(function(a){return Object.getOwnPropertyDescriptor(l,a).enumerable})),e.push.apply(e,s)}return e}function uc(l){for(var t=1;t<arguments.length;t++){var e=arguments[t]!=null?arguments[t]:{};t%2?$y(Object(e),!0).forEach(function(s){PE(l,s,e[s])}):Object.getOwnPropertyDescriptors?Object.defineProperties(l,Object.getOwnPropertyDescriptors(e)):$y(Object(e)).forEach(function(s){Object.defineProperty(l,s,Object.getOwnPropertyDescriptor(e,s))})}return l}function PE(l,t,e){return t=zE(t),t in l?Object.defineProperty(l,t,{value:e,enumerable:!0,configurable:!0,writable:!0}):l[t]=e,l}function zE(l){var t=IE(l,"string");return typeof t=="symbol"?t:t+""}function IE(l,t){if(typeof l!="object"||!l)return l;var e=l[Symbol.toPrimitive];if(e!==void 0){var s=e.call(l,t);if(typeof s!="object")return s;throw new TypeError("@@toPrimitive must return a primitive value.")}return(t==="string"?String:Number)(l)}function mb(l){return l&&l.map((t,e)=>Ge.createElement(t.tag,uc({key:e},t.attr),mb(t.child)))}function BE(l){return t=>Ge.createElement(jE,cc({attr:uc({},l.attr)},t),mb(l.child))}function jE(l){var t=e=>{var{attr:s,size:a,title:o}=l,u=NE(l,OE),h=a||e.size||"1em",d;return e.className&&(d=e.className),l.className&&(d=(d?d+" ":"")+l.className),Ge.createElement("svg",cc({stroke:"currentColor",fill:"currentColor",strokeWidth:"0"},e.attr,s,u,{className:d,style:uc(uc({color:l.color||e.color},e.style),l.style),height:h,width:h,xmlns:"http://www.w3.org/2000/svg"}),o&&Ge.createElement("title",null,o),l.children)};return Yy!==void 0?Ge.createElement(Yy.Consumer,null,e=>t(e)):t(gb)}function FE(l){return BE({attr:{viewBox:"0 0 1024 1024",fill:"currentColor",fillRule:"evenodd"},child:[{tag:"path",attr:{d:"M880 112c17.7 0 32 14.3 32 32v736c0 17.7-14.3 32-32 32H144c-17.7 0-32-14.3-32-32V144c0-17.7 14.3-32 32-32ZM639.978 338.82l-.034.006c-.023.007-.042.018-.083.059L512 466.745l-127.86-127.86c-.042-.041-.06-.052-.084-.059a.118.118 0 0 0-.07 0c-.022.007-.041.018-.082.059l-45.02 45.019c-.04.04-.05.06-.058.083a.118.118 0 0 0 0 .07l.01.022a.268.268 0 0 0 .049.06L466.745 512l-127.86 127.862c-.041.04-.052.06-.059.083a.118.118 0 0 0 0 .07c.007.022.018.041.059.082l45.019 45.02c.04.04.06.05.083.058a.118.118 0 0 0 .07 0c.022-.007.041-.018.082-.059L512 557.254l127.862 127.861c.04.041.06.052.083.059a.118.118 0 0 0 .07 0c.022-.007.041-.018.082-.059l45.02-45.019c.04-.04.05-.06.058-.083a.118.118 0 0 0 0-.07l-.01-.022a.268.268 0 0 0-.049-.06L557.254 512l127.861-127.86c.041-.042.052-.06.059-.084a.118.118 0 0 0 0-.07c-.007-.022-.018-.041-.059-.082l-45.019-45.02c-.04-.04-.06-.05-.083-.058a.118.118 0 0 0-.07 0Z"},child:[]}]})(l)}const HE=qt.div`
   background-color: rgba(0, 0, 0, 0.7);
-  width: 100dvw;
+  width: 100%;
   height: 90%;
   
   position: fixed;
@@ -342,7 +342,7 @@ See https://reactjs.org/docs/forms.html#controlled-components`),U=Z.initialPage?
   align-items: flex-start;
   z-index: 999;
    @media (max-width: 908px) {
-    top:-50px;
+    top:75px;
   }
 `,UE=qt.div`
   width: 70dvw;
@@ -355,6 +355,7 @@ See https://reactjs.org/docs/forms.html#controlled-components`),U=Z.initialPage?
   background-color: #000;
   @media (max-width: 908px) {
     width: 90dvw;
+    height: 80dvh;
     
   }
   @media (max-width: 450px) {
