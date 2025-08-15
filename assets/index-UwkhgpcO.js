@@ -72,7 +72,7 @@ Please change the parent <Route path="${x}"> to <Route path="${x==="/"?"*":`${x}
   height: 100vh;
   width: 100vw;
   align-items: center;
-  padding: 100px 100px;
+  padding: 100px 50px;
   
     h1 {
     margin-bottom: 25px;
@@ -101,6 +101,12 @@ Please change the parent <Route path="${x}"> to <Route path="${x==="/"?"*":`${x}
   color: white;
   font-weight: bold;
 }
+ @media (max-width: 768px) {
+    padding: 100px 10px;
+  }
+  @media (max-width: 450px) {
+    padding: 100px 0px;
+  }
 `,pE=qt.ul`
   display: flex;
   background-color: transparent;
