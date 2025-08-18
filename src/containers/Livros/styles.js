@@ -89,7 +89,7 @@ export const PaginationWrapper = styled.div`
   }
 
   .pagination li.active {
-    background: #6c5ce7;
+    background: #4d7cfe;
     font-weight: bold;
   }
 

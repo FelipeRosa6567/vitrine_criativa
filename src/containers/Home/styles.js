@@ -6,11 +6,50 @@ export const ContainerMain = styled.div`
   max-width: 1200px;
   margin: 0 auto;
   color: #fff;
+`;
+export const IntroSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  color: #333;
 
   h1 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    background-color: #000;
+    color: #4d7cfe;
+    @media (max-width: 768px) {
+      font-size: 2rem;
+      text-align: center;
+    }
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    max-width: 800px;
+    background-color: #000;
+
+    br {
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+      text-align: center;
+    }
+  }
+  h3 {
+    text-align: left;
+    font-size: 1rem;
+    background-color: #000;
+    span {
+      font-weight: 900;
+      font-size: 1.2rem;
+      color: #4d7cfe;
+    }
   }
 `;
 
@@ -21,7 +60,7 @@ export const Section = styled.section`
 export const SectionTitle = styled.h2`
   margin-bottom: 20px;
   font-size: 1.6rem;
-  border-left: 4px solid #6c5ce7;
+  border-left: 4px solid #4d7cfe;
   padding-left: 10px;
 `;
 
@@ -67,7 +106,7 @@ export const SeeAllLink = styled(Link)`
   display: block;
   margin-top: 15px;
   text-align: right;
-  color: #6c5ce7;
+  color: #4d7cfe;
   font-weight: bold;
   text-decoration: none;
 

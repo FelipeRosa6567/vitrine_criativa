@@ -10,6 +10,7 @@ import {
   CardText,
   CardImage,
   SeeAllLink,
+  IntroSection 
 } from "./styles";
 
 import CardLivros from "../../components/CardLivros";
@@ -53,7 +54,25 @@ function Home() {
 
   return (
     <ContainerMain>
+      <IntroSection>
       <h1>Bem-vindo à Vitrine Criativa</h1>
+      <h2>
+        Aqui você pode explorar e compartilhar suas criações artísticas de forma
+        prática e inspiradora. Navegue entre nossas seções e descubra:
+        <br /><br /> 
+       <h3> 
+        <span>Poesias:</span> Uma galeria dedicada a versos que emocionam e encantam.
+        <br />
+        <span>Livros:</span> Exposições de obras literárias para leitura e inspiração.
+        <br />
+        <span>Desenhos:</span> Mostre seu talento visual ou descubra trabalhos incríveis de outros artistas.
+        <br />
+        <span>Jogos:</span> Em breve, uma página interativa com experiências divertidas e criativas para todos.
+        <br /><br />
+        </h3>
+        Nosso objetivo é criar um espaço completo, onde escritores, artistas e amantes da criatividade possam se conectar, compartilhar e se inspirar. Explore, publique e mergulhe no universo da arte!
+      </h2>
+    </IntroSection>
 
       {/* Poemas */}
       <Section>

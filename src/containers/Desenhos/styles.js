@@ -10,7 +10,7 @@ export const ContainerMain = styled.div`
 export const SectionTitle = styled.h2`
   margin-bottom: 20px;
   font-size: 1.6rem;
-  border-left: 4px solid #6c5ce7;
+  border-left: 4px solid #4d7cfe;
   padding-left: 10px;
 `;
 
@@ -67,7 +67,7 @@ export const PaginationWrapper = styled.div`
   }
 
   .pagination li.active {
-    background: #6c5ce7;
+    background: #4d7cfe;
     font-weight: bold;
   }
 
