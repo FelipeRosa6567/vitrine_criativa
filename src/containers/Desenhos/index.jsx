@@ -2,32 +2,32 @@ import { useState, useEffect, useMemo } from "react";
 import { useLocation } from "react-router-dom";
 import ReactPaginate from "react-paginate";
 import { ContainerMain, GridImagens, Imagem } from "./styles";
+import desenhosData from "../../data/desenhos.json";
 
 function Desenhos() {
-  const location = useLocation(); 
+  const location = useLocation();
   const [busca, setBusca] = useState("");
   const [resultados, setResultados] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
   const [imagensPerPage, setImagensPerPage] = useState(18);
 
-  // ✅ useMemo para não recriar o array em cada render
+  // ✅ Flatten JSON e gerar src correto para Vite
   const imagens = useMemo(() => {
-    const imagensImportadas = import.meta.glob(
-      "/src/assets/desenhos/*.{png,jpg,jpeg}", 
-      { eager: true }
-    );
-    return Object.entries(imagensImportadas).map(([caminho, mod]) => {
-      const nomeArquivo = caminho.split("/").pop().split(".")[0];
-      return { src: mod.default, nome: nomeArquivo.toLowerCase() };
-    });
+    return desenhosData
+      .flatMap(autorObj =>
+        autorObj.desenhos.map(d => ({
+          ...d,
+          autor: autorObj.autor,
+          src: new URL(d.src, import.meta.url).href
+        }))
+      )
+      .sort((a, b) => new Date(b.data) - new Date(a.data));
   }, []);
 
-  // Inicializa resultados com todas imagens
   useEffect(() => {
     setResultados(imagens);
   }, [imagens]);
 
-  // Ajusta imagens por página conforme tamanho da tela
   useEffect(() => {
     const updatePerPage = () => {
       if (window.innerWidth < 768) setImagensPerPage(6);
@@ -39,7 +39,6 @@ function Desenhos() {
     return () => window.removeEventListener("resize", updatePerPage);
   }, []);
 
-  // Resetar estado ao trocar de rota
   useEffect(() => {
     setBusca("");
     setResultados(imagens);
@@ -49,7 +48,13 @@ function Desenhos() {
   const handleBuscar = () => {
     const q = busca.trim().toLowerCase();
     setResultados(
-      q ? imagens.filter((img) => img.nome.includes(q)) : imagens
+      q
+        ? imagens.filter(
+            (img) =>
+              img.autor.toLowerCase().includes(q) ||
+              (img.titulo && img.titulo.toLowerCase().includes(q))
+          )
+        : imagens
     );
     setCurrentPage(0);
   };
@@ -87,7 +92,7 @@ function Desenhos() {
           value={busca}
           onChange={(e) => setBusca(e.target.value)}
           onKeyDown={onKeyDown}
-          placeholder="Buscar por autor..."
+          placeholder="Buscar por autor ou título..."
           style={{
             padding: "10px",
             fontSize: "16px",
@@ -142,7 +147,13 @@ function Desenhos() {
       <GridImagens>
         {currentItems.length > 0 ? (
           currentItems.map((img, index) => (
-            <Imagem key={index} src={img.src} alt={img.nome} />
+            <div key={index} style={{ textAlign: "center" }}>
+              <Imagem src={img.src} alt={img.titulo || img.autor} />
+              <p style={{ color: "#fff", marginTop: "6px" }}>
+                <strong>{img.titulo}</strong> <br />
+                <em>{img.autor}</em>
+              </p>
+            </div>
           ))
         ) : (
           <p style={{ color: "#fff", textAlign: "center" }}>
