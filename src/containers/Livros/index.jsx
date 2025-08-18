@@ -1,78 +1,12 @@
-import { useState } from "react";
-import { ContainerMain, ContainerLivros } from "./styles";
+import { useState, useEffect } from "react";
+import { ContainerMain, ContainerLivros, PaginationWrapper } from "./styles";
 import CardLivros from "../../components/CardLivros";
 import ReactPaginate from "react-paginate";
 
+// Importa o JSON diretamente
+import livrosData from "../../data/livros.json";
 
-const livros = [
-  {
-    img: "/vitrine_criativa/livros/O diario perdido.png",
-    title: "O diario perdido dos meus poemas",
-    autor: "Felipe Rosa",
-    id: "diario",
-    descricao: `Algumas palavras não nascem para serem apenas lidas, elas chegam
-                  como tempestades, invadem o peito e só encontram abrigo no papel.
-                  Este diário é feito dessas tempestades e calmarias, de versos que
-                  carregam a fúria do mar e o silêncio da madrugada`,
-  },
-  {
-    img: "/vitrine_criativa/livros/aartedaguerra.jpg",
-    title: "A arte da Guerra",
-    autor: "SUN TZU",
-    id: "aartedaguerra",
-    descricao:
-      "Filósofo que se tornou general cujo nome individual era Wu, nasceu no Estado de Ch’i na China, próximo de 500 a.C., em um auge das ciências militares e legislativas daquele país. Sun Tzu escreveu a “Arte da Guerra”.",
-  },
-  {
-    img: "/vitrine_criativa/livros/alicepaismaravilhas.jpg",
-    title: "Alice no País das Maravilhas",
-    autor: "Lewis Carroll",
-    id: "alicepaismaravilhas",
-    descricao:
-      "Charles Lutwidge Dodgson mais conhecido como CARROLL, LEWIS, seu nome está inscrito na história da literatura mundial por ser o autor de Alice no País das Maravilhas, o mais estranho e fascinante livro para crianças jamais escrito.",
-  },
-  {
-    img: "/vitrine_criativa/livros/romeuejulieta.jpg",
-    title: "Romeu e Julieta",
-    autor: "William Shakespeare",
-    id: "romeuejulieta",
-    descricao:
-      "Há muito tempo duas famílias banham em sangue as ruas de Verona. Enquanto isso, na penumbra das madrugadas, ardem as brasas de um amor secreto. Romeu, filho dos Montéquio, e Julieta, desafiam a rixa familiar e sonham com um impossível futuro, longe da violência e da loucura.",
-  },
-  {
-    img: "/vitrine_criativa/livros/meninomaluquinho.jpg",
-    title: "O Menino Maluquinho",
-    autor: "Ziraldo",
-    id: "meninomaluquinho",
-    descricao:
-      "Nessa versão disponibilizada, gratuitamente, pelo grande Ziraldo, verso e desenho contam a história de um menino traquinas que aprontava muita confusão. Alegria da casa, liderava a garotada, era sabido e um amigão. Fazia versinhos, canções, inventava brincadeiras.",
-  },
-  {
-    img: "/vitrine_criativa/livros/monica_agua_boa.jpg",
-    title: "Monica e a Agua Boa",
-    autor: "Mauricio de Sousa",
-    id: "monica_agua_boa",
-    descricao:
-                "A Turma da Mônica ensina de forma divertida a importância da água potável para a saúde. Com histórias cativantes, os personagens mostram como preservar esse recurso essencial para o planeta e o bem-estar de todos.",
-  },
-  {
-    img: "/vitrine_criativa/livros/almanaque da monica 01.png",
-    title: "Almanaque da monica 01",
-    autor: "Mauricio de Sousa",
-    id: "almanaque da monica 01",
-    descricao: `Publicado em 1987 pela Editora Globo, o Almanaque da Mônica nº 1 
-                reuniu algumas das aventuras mais divertidas e marcantes da Turma da Mônica 
-                produzidas entre o final dos anos 1970 e início dos anos 1980. Em suas páginas, 
-                Mônica, Cebolinha, Magali, Cascão e outros personagens clássicos vivem situações 
-                cheias de humor, confusão e amizade, alternando histórias do cotidiano, tramas inusitadas e 
-                participações de figuras queridas como o Anjinho. Com mais de 100 páginas, essa edição inaugura a 
-                fase dos almanaques na nova casa editorial, preservando o espírito das histórias originais e garantindo muitas risadas 
-                para leitores de todas as idades.`,
-  },
-  ////////////////////////////////////////////////
-];
-
-const livrosPerPage = 9;
+const livrosPerPage = 12;
 
 // Função para normalizar strings
 const normalize = (s = "") =>
@@ -84,26 +18,32 @@ const normalize = (s = "") =>
 function Livros() {
   const [busca, setBusca] = useState("");
   const [currentPage, setCurrentPage] = useState(0);
-  const [resultados, setResultados] = useState(livros);
+  const [resultados, setResultados] = useState(livrosData);
+
+  useEffect(() => {
+    setResultados(livrosData);
+  }, []);
 
   const handleBuscar = () => {
     const q = normalize(busca.trim());
     if (!q) {
-      setResultados(livros);
+      setResultados(livrosData);
     } else {
-      const filtrados = livros.filter(
+      const filtrados = livrosData.filter(
         (item) =>
           normalize(item.title).includes(q) || normalize(item.autor).includes(q)
       );
       setResultados(filtrados);
     }
     setCurrentPage(0);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const handleLimpar = () => {
     setBusca("");
-    setResultados(livros);
+    setResultados(livrosData);
     setCurrentPage(0);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const pageCount = Math.ceil(resultados.length / livrosPerPage);
@@ -112,6 +52,7 @@ function Livros() {
 
   const handlePageClick = (event) => {
     setCurrentPage(event.selected);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const onKeyDown = (e) => {
@@ -122,7 +63,6 @@ function Livros() {
     <ContainerMain>
       <h1 style={{ textAlign: "center" }}>Exposição de livros</h1>
 
-      {/* Campo de busca */}
       <div
         style={{
           display: "flex",
@@ -203,15 +143,17 @@ function Livros() {
       </ContainerLivros>
 
       {pageCount > 1 && (
-        <ReactPaginate
-          previousLabel={"← Anterior"}
-          nextLabel={"Próxima →"}
-          pageCount={pageCount}
-          onPageChange={handlePageClick}
-          containerClassName={"pagination"}
-          activeClassName={"active"}
-          forcePage={currentPage} // garante sincronização visual
-        />
+        <PaginationWrapper>
+          <ReactPaginate
+            previousLabel={"←"}
+            nextLabel={"→"}
+            breakLabel={"..."}
+            pageCount={pageCount}
+            onPageChange={handlePageClick}
+            containerClassName={"pagination"}
+            activeClassName={"active"}
+          />
+        </PaginationWrapper>
       )}
     </ContainerMain>
   );

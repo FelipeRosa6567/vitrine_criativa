@@ -9,6 +9,7 @@ import Desenhos from '../containers/Desenhos'
 import Games from '../containers/Games'
 import Creditos from '../containers/Creditos'
 import View from '../containers/View'
+import ScrollToTop from "../components/ScrollToTop";
 
 import DefaultLayout from '../layout/DefaultLayout'
 
@@ -16,6 +17,7 @@ function Router() {
   return (
     <>
     <GalaxyBackground />
+     <ScrollToTop />
     <Routes>
       <Route element={<DefaultLayout />}>
         <Route path="/" element={<Home />} />

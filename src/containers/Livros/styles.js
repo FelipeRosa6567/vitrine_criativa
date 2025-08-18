@@ -43,15 +43,43 @@ export const ContainerMain = styled.div`
     padding: 100px 0px;
   }
 `;
+export const PaginationWrapper = styled.div`
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+
+  .pagination {
+    display: flex;
+    list-style: none;
+    gap: 8px;
+  }
+
+  .pagination li {
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: #2c2c3e;
+    cursor: pointer;
+  }
+
+  .pagination li.active {
+    background: #6c5ce7;
+    font-weight: bold;
+  }
+
+  .pagination li:hover {
+    background: #444;
+  }
+`;
+
 
 export const ContainerLivros = styled.div`
   display: grid;
-  gap: 1.2rem; /* espaçamento entre colunas */
+  gap: 1rem; 
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  max-width: calc(4 * 250px + 3 * 1rem); /* limita a 4 colunas */
+  max-width: calc(4 * 250px + 3 * 1rem); 
   @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr); /* duas colunas iguais */
-    max-width: 100%; /* ocupa toda a largura disponível */
+    grid-template-columns: repeat(2, 1fr); 
+    max-width: 100%; 
   }
   @media (max-width: 450px) {
     grid-template-columns: 1fr; /* apenas 1 coluna */

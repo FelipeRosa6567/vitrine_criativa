@@ -1,87 +1,71 @@
 import styled from "styled-components";
 
 export const ContainerMain = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 100vw;
-  align-items: center;
-  padding: 100px 50px;
-  background-color: transparente;
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #fff;
+`;
 
-  h1 {
-    margin-bottom: 25px;
-  }
-      hr{
-    margin-bottom: 25px;
-  }
+export const SectionTitle = styled.h2`
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  border-left: 4px solid #6c5ce7;
+  padding-left: 10px;
+`;
+
+export const Grid = styled.div`
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+`;
+
+export const Card = styled.div`
+  background: #1e1e2f;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  text-align: ${(props) => (props.$center ? "center" : "left")};
+`;
+
+export const CardImage = styled.img`
+  max-width: 100%;
+  height: 250px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+`;
+
+export const CardAuthor = styled.p`
+  font-style: italic;
+  opacity: 0.8;
+  margin: 4px 0 0;
+`;
+
+export const PaginationWrapper = styled.div`
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
 
   .pagination {
-  display: flex;
-  list-style: none;
-  gap: 10px;
-  
-}
-
-.pagination li {
-  padding: 5px 10px;
-  border: 1px solid #ccc;
-  margin-bottom: 25px;
-  cursor: pointer;
-  
-}
-
-.pagination .active {
-  background-color: #007bff;
-  color: white;
-  font-weight: bold;
-}
-
-  @media (max-width: 768px) {
-    padding: 100px 10px;
+    display: flex;
+    list-style: none;
+    gap: 8px;
   }
-  @media (max-width: 450px) {
-    padding: 100px 0px;
-  }
-`;
 
-export const GridImagens = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 16px;
-  margin-top: 20px;
-  padding-bottom: 50px;
-  width: 100%;
-  max-width: 1000px;  
-  @media (max-width: 800px) {
-    grid-template-columns: 1fr;
+  .pagination li {
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: #2c2c3e;
+    cursor: pointer;
   }
-`;
 
-export const Imagem = styled.img`
-  width: 100%;
-  height: 220px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  transition: transform 0.2s ease;
-
-  &:hover {
-    transform: scale(1.05);
+  .pagination li.active {
+    background: #6c5ce7;
+    font-weight: bold;
   }
-  @media (max-width: 800px) {
-    display: block;
-    margin: 0 auto;
-    width: 70%;
-    height: 90%;
-  }
-`;
 
-export const CampoBusca = styled.input`
-  padding: 8px;
-  font-size: 16px;
-  width: 100%;
-  max-width: 300px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  .pagination li:hover {
+    background: #444;
+  }
 `;
