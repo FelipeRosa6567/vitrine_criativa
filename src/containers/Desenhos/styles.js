@@ -18,6 +18,12 @@ export const Grid = styled.div`
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  @media (max-width: 768px) {
+    width: 75%;
+    max-width: 300px; 
+    margin: 0 auto;
+    
+    }
 `;
 
 export const Card = styled.div`

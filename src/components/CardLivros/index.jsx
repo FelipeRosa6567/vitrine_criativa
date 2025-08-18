@@ -1,4 +1,4 @@
-import { Container } from "./styles.js";
+import { Container, CardAuthor, CardTitle } from "./styles.js";
 import { useNavigate } from "react-router-dom";
 
 function CardLivros({livro }) {
@@ -16,8 +16,9 @@ function CardLivros({livro }) {
           src={livro.img}
           alt="imagem-projeto"
         />
-        <p>{livro.title}</p>
-        <p>Autor: {livro.autor}</p>
+       
+        <CardTitle>{livro.title}</CardTitle>
+        <CardAuthor> {livro.autor}</CardAuthor>
       </Container>
     </>
   );

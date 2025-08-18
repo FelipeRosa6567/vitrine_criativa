@@ -1,48 +1,75 @@
 import styled from "styled-components";
 
 export const ContainerMain = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 100vw;
-  align-items: center;
-  padding: 100px 50px;
-  background-color: transparente;
+   padding: 50px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #fff;
+  /* background-color: #0f0f1f; */
 
-  h1 {
-    margin-bottom: 25px;
-  }
-    hr{
-    margin-bottom: 25px;
-  }
-
-  .pagination {
-  display: flex;
-  list-style: none;
-  gap: 10px;
-  
-}
-
-.pagination li {
-  padding: 5px 10px;
-  border: 1px solid #ccc;
-  margin-bottom: 25px;
-  cursor: pointer;
-  
-}
-
-.pagination .active {
-  background-color: #007bff;
-  color: white;
-  font-weight: bold;
-}
   @media (max-width: 768px) {
-    padding: 100px 10px;
+    padding: 100px 20px;
   }
   @media (max-width: 450px) {
-    padding: 100px 0px;
+    padding: 80px 10px;
   }
 `;
+
+export const ContainerLivros = styled.div`
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  max-width: calc(4 * 250px + 3 * 1rem);
+  width: 100%;
+  
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+  }
+  @media (max-width: 450px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+export const SearchWrapper = styled.div`
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px 0 30px;
+`;
+
+export const SearchInput = styled.input`
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 50%;
+  max-width: 400px;
+  color: #000;
+`;
+
+export const SearchButton = styled.button`
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #4d7cfe;
+  color: #fff;
+  transition: 0.2s;
+
+  &:hover:not(:disabled) {
+    background: #3b6edc;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+`;
+
 export const PaginationWrapper = styled.div`
   margin-top: 30px;
   display: flex;
@@ -71,18 +98,15 @@ export const PaginationWrapper = styled.div`
   }
 `;
 
+export const Section = styled.section`
+  margin: 50px auto;
+  padding: 0 20px;
+  max-width: 1200px;
+`;
 
-export const ContainerLivros = styled.div`
-  display: grid;
-  gap: 1rem; 
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  max-width: calc(4 * 250px + 3 * 1rem); 
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr); 
-    max-width: 100%; 
-  }
-  @media (max-width: 450px) {
-    grid-template-columns: 1fr; /* apenas 1 coluna */
-    max-width: 100%; /* ocupa toda a largura */
-  }
+export const SectionTitle = styled.h2`
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  border-left: 4px solid #4d7cfe;
+  padding-left: 10px;
 `;

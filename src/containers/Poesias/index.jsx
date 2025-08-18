@@ -1,6 +1,20 @@
+// Poesias.jsx
 import React, { useState } from "react";
-import { ContainerMain, ContainerPoemas } from "./styles";
 import ReactPaginate from "react-paginate";
+import {
+  Section,
+  SectionTitle,
+  Grid,
+  Card,
+  CardTitle,
+  CardAuthor,
+  CardText,
+  SearchWrapper,
+  SearchInput,
+  SearchButton,
+  PaginationWrapper,
+  ContainerMain
+} from "./styles";
 import poesiasData from "../../data/poesias.json";
 
 const itemsPerPage = 12;
@@ -15,7 +29,7 @@ const normalize = (s = "") =>
 function Poesias() {
   const [busca, setBusca] = useState("");
   const [currentPage, setCurrentPage] = useState(0);
-  const [resultados, setResultados] = useState(poesiasData); // agora vem do JSON
+  const [resultados, setResultados] = useState(poesiasData);
 
   const handleBuscar = () => {
     const q = normalize(busca.trim());
@@ -54,105 +68,60 @@ function Poesias() {
 
   return (
     <ContainerMain>
-      <h1 style={{ textAlign: "center" }}>Exposição de Poesias</h1>
+      <Section>
+        <SectionTitle>✨ Exposição de Poesias</SectionTitle>
 
-      <div
-        style={{
-          display: "flex",
-          gap: "8px",
-          justifyContent: "center",
-          alignItems: "center",
-          margin: "16px 0 20px",
-          flexWrap: "wrap",
-        }}
-      >
-        <input
-          type="text"
-          value={busca}
-          onChange={(e) => setBusca(e.target.value)}
-          onKeyDown={onKeyDown}
-          placeholder="Buscar por título ou autor..."
-          style={{
-            padding: "10px",
-            fontSize: "16px",
-            borderRadius: "5px",
-            border: "1px solid #ccc",
-            width: "50%",
-            maxWidth: "400px",
-            color: "#000",
-          }}
-        />
-        <button
-          onClick={handleBuscar}
-          style={{
-            padding: "10px 14px",
-            borderRadius: "6px",
-            border: "none",
-            cursor: "pointer",
-            width: "20%",
-            maxWidth: "400px",
-            color: "#000",
-          }}
-        >
-          Buscar
-        </button>
-        <button
-          onClick={handleLimpar}
-          style={{
-            padding: "10px 14px",
-            borderRadius: "6px",
-            border: "none",
-            cursor: "pointer",
-            opacity: busca ? 1 : 0.6,
-            width: "20%",
-            maxWidth: "400px",
-            color: "#000",
-          }}
-          disabled={!busca}
-        >
-          Limpar
-        </button>
-      </div>
+        <SearchWrapper>
+          <SearchInput
+            type="text"
+            value={busca}
+            onChange={(e) => setBusca(e.target.value)}
+            onKeyDown={onKeyDown}
+            placeholder="Buscar por título ou autor..."
+          />
+          <SearchButton onClick={handleBuscar}>Buscar</SearchButton>
+          <SearchButton onClick={handleLimpar} disabled={!busca}>
+            Limpar
+          </SearchButton>
+        </SearchWrapper>
 
-      <hr
-        style={{
-          border: "none",
-          height: "2px",
-          backgroundColor: "#ffffff",
-          width: "130%",
-        }}
-      />
+        <Grid>
+          {currentItems.length > 0 ? (
+            currentItems.map((item, i) => (
+              <Card key={`${item.titulo}-${i}`}>
+                <CardTitle>{item.titulo}</CardTitle>
+                <CardAuthor>— {item.autor}</CardAuthor>
+                <CardText>
+                  {item.poema.map((linha, index) => (
+                    <span key={index}>
+                      {linha}
+                      <br />
+                    </span>
+                  ))}
+                </CardText>
+              </Card>
+            ))
+          ) : (
+            <p style={{ color: "#fff", textAlign: "center" }}>
+              Nenhum poema encontrado.
+            </p>
+          )}
+        </Grid>
 
-      <ContainerPoemas>
-        {currentItems.length > 0 ? (
-          currentItems.map((item, i) => (
-            <li key={`${item.titulo}-${i}`}>
-              <p><strong>{item.titulo}</strong></p>
-              <br />
-              {item.poema.map((linha, index) => (
-                <p key={index}>{linha}</p>
-              ))}
-              <br />
-              <p>-- {item.autor}</p>
-            </li>
-          ))
-        ) : (
-          <p style={{ color: "#fff", textAlign: "center" }}>
-            Nenhum poema encontrado.
-          </p>
+        {pageCount > 1 && (
+          <PaginationWrapper>
+            <ReactPaginate
+              previousLabel={"←"}
+              nextLabel={"→"}
+              breakLabel={"..."}
+              pageCount={pageCount}
+              onPageChange={handlePageClick}
+              containerClassName={"pagination"}
+              activeClassName={"active"}
+            />
+          </PaginationWrapper>
         )}
-      </ContainerPoemas>
-
-      {pageCount > 1 && (
-        <ReactPaginate
-          previousLabel={"← Anterior"}
-          nextLabel={"Próxima →"}
-          pageCount={pageCount}
-          onPageChange={handlePageClick}
-          containerClassName={"pagination"}
-          activeClassName={"active"}
-        />
-      )}
+      </Section>
     </ContainerMain>
   );
 }

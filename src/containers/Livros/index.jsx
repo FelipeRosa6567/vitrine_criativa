@@ -1,14 +1,20 @@
 import { useState, useEffect } from "react";
-import { ContainerMain, ContainerLivros, PaginationWrapper } from "./styles";
-import CardLivros from "../../components/CardLivros";
 import ReactPaginate from "react-paginate";
-
-// Importa o JSON diretamente
+import {
+  ContainerMain,
+  ContainerLivros,
+  PaginationWrapper,
+  SearchWrapper,
+  SearchInput,
+  SearchButton,
+  Section,
+  SectionTitle
+} from "./styles";
+import CardLivros from "../../components/CardLivros";
 import livrosData from "../../data/livros.json";
 
 const livrosPerPage = 12;
 
-// Função para normalizar strings
 const normalize = (s = "") =>
   s
     .normalize("NFD")
@@ -61,84 +67,29 @@ function Livros() {
 
   return (
     <ContainerMain>
-      <h1 style={{ textAlign: "center" }}>Exposição de livros</h1>
+      <Section>
+        <SectionTitle><h1>📚 Exposição de Livros</h1></SectionTitle>
 
-      <div
-        style={{
-          display: "flex",
-          gap: "8px",
-          justifyContent: "center",
-          alignItems: "center",
-          margin: "16px 0 20px",
-          flexWrap: "wrap",
-        }}
-      >
-        <input
+      <SearchWrapper>
+        <SearchInput
           type="text"
           value={busca}
           onChange={(e) => setBusca(e.target.value)}
           onKeyDown={onKeyDown}
           placeholder="Buscar por título ou autor..."
-          style={{
-            padding: "10px",
-            fontSize: "16px",
-            borderRadius: "5px",
-            border: "1px solid #ccc",
-            width: "50%",
-            maxWidth: "400px",
-            color: "#000",
-          }}
         />
-        <button
-          onClick={handleBuscar}
-          style={{
-            padding: "10px 14px",
-            borderRadius: "6px",
-            border: "none",
-            cursor: "pointer",
-            width: "20%",
-            maxWidth: "400px",
-            color: "#000",
-          }}
-        >
-          Buscar
-        </button>
-        <button
-          onClick={handleLimpar}
-          style={{
-            padding: "10px 14px",
-            borderRadius: "6px",
-            border: "none",
-            cursor: "pointer",
-            opacity: busca ? 1 : 0.6,
-            width: "20%",
-            maxWidth: "400px",
-            color: "#000",
-          }}
-          disabled={!busca}
-        >
+        <SearchButton onClick={handleBuscar}>Buscar</SearchButton>
+        <SearchButton onClick={handleLimpar} disabled={!busca}>
           Limpar
-        </button>
-      </div>
+        </SearchButton>
+      </SearchWrapper>
 
-      <hr
-        style={{
-          border: "none",
-          height: "2px",
-          backgroundColor: "#ffffff",
-          width: "130%",
-        }}
-      />
 
       <ContainerLivros>
         {currentItems.length > 0 ? (
-          currentItems.map((livro) => (
-            <CardLivros key={livro.id} livro={livro} />
-          ))
+          currentItems.map((livro) => <CardLivros key={livro.id} livro={livro} />)
         ) : (
-          <p style={{ color: "#fff", textAlign: "center" }}>
-            Nenhum livro encontrado.
-          </p>
+          <p style={{ color: "#fff", textAlign: "center" }}>Nenhum livro encontrado.</p>
         )}
       </ContainerLivros>
 
@@ -150,11 +101,12 @@ function Livros() {
             breakLabel={"..."}
             pageCount={pageCount}
             onPageChange={handlePageClick}
-            containerClassName={"pagination"}
-            activeClassName={"active"}
+            containerClassName="pagination"
+            activeClassName="active"
           />
         </PaginationWrapper>
       )}
+      </Section>
     </ContainerMain>
   );
 }
