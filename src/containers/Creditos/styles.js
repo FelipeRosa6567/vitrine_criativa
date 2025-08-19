@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ContainerMain = styled.div`
-  padding: 100px 20px;
+  padding-top: 70px;
   max-width: 1200px;
   margin: 0 auto;
   color: #fff;
@@ -11,12 +11,12 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
+  min-height: 80vh;
 `;
 
 export const Title = styled.h1`
-  font-size: 3rem;
-  margin-bottom: 50px;
+  font-size: 2.6rem;
+  margin-bottom: 20px;
   color: #ffffffff;
   background-color: #000;
 `;
@@ -26,7 +26,7 @@ export const CreatorsGrid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;
   width: 100%;
-  max-width: 1000px;
+  max-width: 800px;
 `;
 
 export const CreatorCard = styled.div`
@@ -65,4 +65,21 @@ export const CreatorBio = styled.p`
   font-size: 1rem;
   color: #666;
   line-height: 1.5;
+`;
+
+
+export const ContactIcons = styled.div`
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+  justify-content: center;
+`;
+
+export const ContactLink = styled.a`
+  color: #555;
+  transition: color 0.3s;
+
+  &:hover {
+    color: #000;
+  }
 `;
