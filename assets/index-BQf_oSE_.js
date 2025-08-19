@@ -500,6 +500,10 @@ See https://reactjs.org/docs/forms.html#controlled-components`),U=Z.initialPage?
   gap: 40px;
   width: 100%;
   max-width: 800px;
+   @media (max-width: 768px) {
+    gap: 10px;
+    margin-bottom: 20px;
+    }
 `,wE=ct.div`
   display: flex;
   flex-direction: column;
@@ -509,6 +513,9 @@ See https://reactjs.org/docs/forms.html#controlled-components`),U=Z.initialPage?
   border-radius: 15px;
   box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
   text-align: center;
+  @media (max-width: 768px) {
+    margin: 10px 30px;
+    }
 `,xE=ct.img`
   width: 150px;
   height: 150px;
