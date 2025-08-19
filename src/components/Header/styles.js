@@ -9,7 +9,7 @@ export const Container = styled.header`
   padding: 20px 50px;
   background-color: ${({ $changeBackground }) => ($changeBackground ? '#000' : 'transparent')};
   box-shadow: ${({ $changeBackground }) => ($changeBackground ? '0 2px 10px rgba(0,0,0,0.1)' : 'none')};
-  z-index: 1000;
+  z-index: 99;
 
   .mobile-menu-btn {
     display: none;
