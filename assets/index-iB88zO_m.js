@@ -177,8 +177,12 @@ Please change the parent <Route path="${E}"> to <Route path="${E==="/"?"*":`${E}
     max-width: 300px; 
     display: block;
     margin: 0 auto;
-    
     }
+    img {
+    width: 80%;
+    display: block;
+    margin: 10px auto;
+  }
 `,_x=ct.p`
   font-style: italic;
   opacity: 0.8;
