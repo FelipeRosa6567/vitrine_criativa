@@ -27,6 +27,10 @@ export const CreatorsGrid = styled.div`
   gap: 40px;
   width: 100%;
   max-width: 800px;
+   @media (max-width: 768px) {
+    gap: 10px;
+    margin-bottom: 20px;
+    }
 `;
 
 export const CreatorCard = styled.div`
@@ -38,6 +42,9 @@ export const CreatorCard = styled.div`
   border-radius: 15px;
   box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
   text-align: center;
+  @media (max-width: 768px) {
+    margin: 10px 30px;
+    }
 `;
 
 export const CreatorImage = styled.img`
