@@ -11,10 +11,10 @@ function Creditos() {
       imagem: "/vitrine_criativa/creators/Daniel.png", // coloque a imagem na pasta public/assets/creators
     },
     {
-      nome: "Felip Rosa",
+      nome: "Felipe Rosa",
       titulo: "Designer e Ilustrador",
       resumo:
-        "Felip criou o design visual e todos os elementos gráficos do site.",
+        "Felipe criou o design visual e todos os elementos gráficos do site.",
       imagem: "/vitrine_criativa/creators/felip.jpg",
     },
   ];
