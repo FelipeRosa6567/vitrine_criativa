@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo da Cobrinha com Estrelas</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  
+  <canvas id="galaxy"></canvas> <!--Fundo galáxia-->
+
+  <div class="menu-botao"> <!--Menu-->
+    <button class="botao" onclick="toggleMenu()">Menu</button>
+    <div id="submenu">
+      <button class="botao" onclick="window.location.href='../../index.html'">Home</button> <!--Central inicio-->
+      <button class="botao" onclick="window.location.href='../../Poesias/Tela um/telaum.html'">Poesias</button> <!--Pagina poesias-->
+      <button class="botao" onclick="window.location.href='../../Livros/Tela um/telaum.html'">Livros</button> <!--Pagina livros-->
+      <button class="botao" onclick="window.location.href='../../Desenhos/Tela um/telaum.html'">Desenhos</button> <!--Pagina desenhos-->
+      <button class="botao" onclick="window.location.href='../../Games/telaum.html'">Games</button> <!--Pagina Games-->
+      <button class="botao" onclick="window.location.href='../../Creditos/Tela um/telaum.html'">Créditos</button> <!--Pagina Creditos-->
+    </div>
+  </div>
+
+  <div id="score">Pontuação: 0</div><!--Pontuação-->
+  <div id="high-score">Maior Pontuação: 0</div>
+
+  <canvas id="gameCanvas" width="400" height="400"></canvas> <!--Jogo-->
+
+  <br> <!--Quebra linha-->
+  <br> <!--Quebra linha-->
+
+  <button class="botao" onclick="reloadPage()">Recarregar</button> <!--Botão para recarregar o jogo-->
+
+  <script src="galaxy.js"></script> <!--Script fundo-->
+  <script src="snake.js"></script> <!--Script jogo-->
+
+</body>
+</html>

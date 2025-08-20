@@ -1,0 +1,129 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: hidden;
+}
+
+/* Fundo galáxia */
+#galaxy {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+/* Menu */
+.menu-botao {
+  margin: 15px 0 10px 0;
+  position: relative;
+  z-index: 10;
+}
+
+#submenu {
+  display: none;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.botao {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.botao:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+/* Canvas do jogo */
+#game {
+  border: 2px solid white;
+  background: #111;
+  image-rendering: pixelated;
+}
+
+/* Botão recomeçar */
+.restart-container {
+  margin: 10px 0 20px 0;
+}
+
+.restart-button {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.restart-button:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+/* Pontuação */
+#score, #high-score {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  text-align: right;
+  font-weight: bold;
+  font-size: 16px;
+  z-index: 10;
+}
+
+#high-score {
+  top: 50px;
+}
+
+/* Controles móveis */
+.mobile-controls {
+  display: none; /* invisível por padrão */
+  margin-bottom: 20px;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+/* Media query para telas pequenas */
+@media (max-width: 768px) {
+  /* Exibe controles móveis */
+  .mobile-controls {
+    display: flex;
+  }
+
+  .mobile-controls button {
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 6px rgba(255,255,255,0.3);
+  }
+}

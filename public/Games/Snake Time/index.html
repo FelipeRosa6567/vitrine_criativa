@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="galaxy"></canvas>
+
+  <!-- Menu -->
+  <div class="menu-botao">
+    <button class="botao" onclick="toggleMenu()">Menu</button>
+    <div id="submenu">
+      <button class="botao" onclick="window.location.href='../../index.html'">Home</button>
+      <button class="botao" onclick="window.location.href='../../Poesias/Tela um/telaum.html'">Poesias</button>
+      <button class="botao" onclick="window.location.href='../../Livros/Tela um/telaum.html'">Livros</button>
+      <button class="botao" onclick="window.location.href='../../Desenhos/Tela um/telaum.html'">Desenhos</button>
+      <button class="botao" onclick="window.location.href='../../Games/telaum.html'">Games</button>
+      <button class="botao" onclick="window.location.href='../../Creditos/Tela um/telaum.html'">Créditos</button>
+    </div>
+  </div>
+
+  <!-- Pontuação no topo -->
+  <div id="score">Pontuação: 0</div>
+  <div id="high-score">Maior Pontuação: 0</div>
+
+  <div id="timer">Tempo restante: 03:00</div>
+
+  <!-- Jogo e botão -->
+  <div class="game-container">
+    <canvas id="snake" width="512" height="512"></canvas>
+    <button class="botao" onclick="reloadPage()">Recarregar</button>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="galaxy.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+/* Fundo */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  color: white;
+  overflow-x: hidden;
+}
+
+#galaxy {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  z-index: -1;
+}
+
+/* Cabeçalho */
+.Cabeçalho {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.titulo {
+  text-align: center;
+}
+
+/* Botões Menu */
+.menu-botao {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  z-index: 1;
+  position: relative;
+}
+
+#submenu {
+  display: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.botao {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.botao:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .menu-botao {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #submenu {
+    flex-direction: column;
+  }
+}
+
+/* Corpo */ 
+
+.corpo {
+  display: flex;
+  background-color: transparent;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  max-width: calc((260px * 5) + (10px * 4)); /* 5 itens + 4 gaps */
+  margin: 0 auto; /* centralizar */
+}
+
+.item {
+  width: 200px;
+  height: 200px;
+  outline: 1px solid white;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;  /* Organiza tudo na vertical */
+  align-items: center;     /* Centraliza horizontalmente */
+  justify-content: center; /* Opcional, centraliza verticalmente se houver altura fixa */
+  padding: 20px;           /* Espaçamento interno */
+  text-align: center;      /* Centraliza texto */
+}
+
+.botaol {
+  margin-top: 10px;   /* Espaço entre o texto de cima e o botão */
+}
