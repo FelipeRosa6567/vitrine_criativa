@@ -1,0 +1,115 @@
+/* Fundo galáxia */
+#galaxy {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  z-index: 0;
+}
+
+/* Menu */
+.menu-botao {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  z-index: 2;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+#submenu {
+  display: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Botão padrão restaurado */
+.botao {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+}
+
+.botao:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Corpo */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000000;
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Container do jogo */
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+  z-index: 2;
+}
+
+canvas#snake {
+  border: 1px solid #fff;
+  margin-bottom: 20px;
+}
+
+/* Botão recarregar */
+.game-container .botao {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Press Start 2P', cursive;
+}
+
+/* Score fixo no topo direito */
+#score, #high-score {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+  text-align: right;
+  font-size: 14px;
+  font-family: 'Press Start 2P', cursive;
+  z-index: 3;
+}
+
+#high-score {
+  top: 50px;
+}
+
+#timer {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #00ffcc;
+  font-size: 16px;
+  font-family: 'Press Start 2P', cursive;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 2px solid #00ffcc;
+  padding: 10px;
+  border-radius: 8px;
+  z-index: 3;
+  text-shadow: 1px 1px 2px black;
+}
